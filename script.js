@@ -56,8 +56,31 @@ function updateStock() {
 }
 
 function exportUpdatedFile() {
+    // Convert stock data to a worksheet
     const worksheet = XLSX.utils.json_to_sheet(stockData);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Stock');
-    XLSX.writeFile(workbook, 'updated_stock.xlsx');
+
+    // Write workbook to binary string
+    const binary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
+
+    // Convert binary string to array buffer
+    const arrayBuffer = new ArrayBuffer(binary.length);
+    const view = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < binary.length; i++) {
+        view[i] = binary.charCodeAt(i) & 0xff;
+    }
+
+    // Create a Blob with the correct MIME type
+    const blob = new Blob([arrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+    // Create a download link
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'updated_stock.xlsx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    alert('File exported successfully!');
 }
