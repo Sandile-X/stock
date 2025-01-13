@@ -110,3 +110,22 @@ function exportUpdatedFile() {
     alert('File exported successfully!');
 }
 
+
+
+
+//CSV Function
+
+function exportCSV() {
+    const csvContent = 'Device Name,Part Number,Description,Quantity\n' + inventoryData.map(item => {
+        return `${item.deviceName},${item.partNumber},${item.description},${item.quantity}`;
+    }).join('\n');
+    
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'inventory.csv');
+    a.click();
+}
+
+
