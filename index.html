@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Add a small logo above the header -->
+        <div class="logo-container">
+            <img src="images/TREND LOGO.png" alt="Company Logo" class="logo">
+        </div>
+
+    <div class="app">
+        <header class="header">Stock Control</header>
+        <input type="file" id="fileInput" accept=".xlsx, .xls" class="file-input">
+        <div class="search-section">
+            <label for="partNumberInput">Enter Part Number:</label>
+            <input type="text" id="partNumberInput" placeholder="Enter Part Number">
+            <button id="searchBtn" class="button">Search</button>
+        </div>
+        <div class="result-section" id="resultSection" style="display: none;">
+            <p><strong>Part Number:</strong> <span id="resultPartNumber"></span></p>
+            <p><strong>Description:</strong> <span id="resultDescription"></span></p>
+            <p><strong>Brand:</strong> <span id="resultBrand"></span></p>
+            <p><strong>Quantity:</strong> <span id="resultQuantity"></span></p>
+            <label for="adjustQuantityInput">Amount to Remove:</label>
+            <input type="number" id="adjustQuantityInput" min="0" placeholder="Enter amount">
+            <button id="updateBtn" class="button">Update Stock</button>
+        </div>
+        <button id="exportBtn" class="button" style="display: none;">Export Updated File</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
