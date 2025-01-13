@@ -56,3 +56,15 @@ label {
     margin-top: 10px;
     display: block;
 }
+
+.logo-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.logo {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    display: inline-block;
+}
+
