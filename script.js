@@ -56,77 +56,14 @@ function updateStock() {
 }
 
 function exportUpdatedFile() {
-    // Convert stock data to a worksheet
-    const worksheet = XLSX.utils.json_to_sheet(stockData);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Stock');
-
-    // Write workbook to binary string
-    const binary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
-
-    // Convert binary string to array buffer
-    const arrayBuffer = new ArrayBuffer(binary.length);
-    const view = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < binary.length; i++) {
-        view[i] = binary.charCodeAt(i) & 0xff;
-    }
-
-    // Create a Blob with the correct MIME type
-    const blob = new Blob([arrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-
-    // Create a download link
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'updated_stock.xlsx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    alert('File exported successfully!');
-}
-
-function exportUpdatedFile() {
-    // Convert stock data to a worksheet
-    const worksheet = XLSX.utils.json_to_sheet(stockData);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Stock');
-
-    // Write workbook to binary string
-    const binary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
-
-    // Convert binary string to array buffer
-    const arrayBuffer = new ArrayBuffer(binary.length);
-    const view = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < binary.length; i++) {
-        view[i] = binary.charCodeAt(i) & 0xff;
-    }
-
-    // Create a Blob with the correct MIME type
-    const blob = new Blob([arrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-
-    // Use FileSaver.js to save the file
-    saveAs(blob, 'updated_stock.xlsx');
-
-    alert('File exported successfully!');
-}
-
-
-
-
-//CSV Function
-
-function exportCSV() {
-    const csvContent = 'Device Name,Part Number,Description,Quantity\n' + inventoryData.map(item => {
-        return `${item.deviceName},${item.partNumber},${item.description},${item.quantity}`;
+    const csvContent = 'Part Number,Description,Brand,Quantity\n' + stockData.map(row => {
+        return `${row['Part Number']},${row['Description']},${row['Brand']},${row['Quantity']}`;
     }).join('\n');
     
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('href', url);
-    a.setAttribute('download', 'inventory.csv');
+    a.setAttribute('download', 'updated_stock.csv');
     a.click();
 }
-
-document.getElementById('exportCSVBtn').addEventListener('click', exportCSV);
-
