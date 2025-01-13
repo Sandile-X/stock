@@ -128,4 +128,5 @@ function exportCSV() {
     a.click();
 }
 
+document.getElementById('exportCSVBtn').addEventListener('click', exportCSV);
 
