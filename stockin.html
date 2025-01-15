@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stock In</title>
+    <link rel="stylesheet" href="stockout.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Navbar with Back Button and Hamburger Menu -->
+        <div class="navbar">
+            <button class="back-button" onclick="navigateHome()">←</button>
+            <div class="menu">
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+                <ul class="menu-links" id="menuLinks">
+                    <li><a href="#link1">Link 1</a></li>
+                    <li><a href="#link2">Link 2</a></li>
+                    <li><a href="#link3">Link 3</a></li>
+                    <li><a href="#link4">Link 4</a></li>
+                    <li><a href="#link5">Link 5</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add a small logo above the header -->
+        <div class="logo-container">
+            <img src="images/stockin.webp" alt="Company Logo" class="logo">
+        </div>
+
+
+        <!-- Stock In Page Content -->
+        <header class="header">Stock In</header>
+        <input type="file" id="fileInput" accept=".xlsx, .xls" class="file-input">
+        <div class="search-section">
+            <label for="partNumberInput">Enter Part Number:</label>
+            <input type="text" id="partNumberInput" placeholder="Enter Part Number">
+            <button id="searchBtn" class="button">Search</button>
+        </div>
+        <div class="result-section" id="resultSection" style="display: none;">
+            <p><strong>Part Number:</strong> <span id="resultPartNumber"></span></p>
+            <p><strong>Description:</strong> <span id="resultDescription"></span></p>
+            <p><strong>Brand:</strong> <span id="resultBrand"></span></p>
+            <p><strong>Quantity:</strong> <span id="resultQuantity"></span></p>
+            <label for="adjustQuantityInput">Amount to Add:</label>
+            <input type="number" id="adjustQuantityInput" min="0" placeholder="Enter amount">
+            <button id="updateBtn" class="button">Update Stock</button>
+        </div>
+        <button id="exportBtn" class="button" style="display: none;">Export Updated File</button>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="stockin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>

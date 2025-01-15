@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stock</title>
+    <link rel="stylesheet" href="viewstock.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Navbar -->
+        <div class="navbar">
+            <button class="back-button" onclick="navigateBack()">&#8592;</button>
+            <h1 class="header">View Stock</h1>
+            <div class="menu">
+                <span class="hamburger" onclick="toggleMenu()">☰</span>
+                <ul class="menu-links" id="menuLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">View Stock</a></li>
+                    <li><a href="#">Stock In</a></li>
+                    <li><a href="#">Stock Out</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="images/TREND LOGO.png" alt="Company Logo" class="logo">
+        </div>
+
+        <!-- Stock Table -->
+        <div class="stock-table-container">
+            <table class="stock-table" id="stockTable">
+                <thead>
+                    <tr>
+                        <th>Part Number</th>
+                        <th>Description</th>
+                        <th>Brand</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="viewstock.js"></script>
+</body>
+</html>

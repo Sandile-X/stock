@@ -1,0 +1,139 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.app {
+    max-width: 500px;
+    margin: 50px auto;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    background: #007aff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    width: 94%;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007aff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+}
+
+.menu {
+    position: relative;
+}
+
+.hamburger {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-links li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-links li:last-child {
+    border-bottom: none;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: #007aff;
+    font-size: 16px;
+}
+
+.menu-links li a:hover {
+    text-decoration: underline;
+}
+
+
+.file-input, .search-section input, .button, #adjustQuantityInput {
+    width: 97%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.button {
+    background: #007aff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background: #005bb5;
+}
+
+.result-section {
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.logo-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.logo {
+    width: 180px; /* Adjust as needed */
+    height: auto;
+    display: inline-block;
+}
+

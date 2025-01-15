@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    overflow: hidden; /* Disable scrolling */
+}
+
+.app {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 100vh; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Navbar */
+.header {
+    background: #007aff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007aff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+}
+
+.menu {
+    position: relative;
+}
+
+.hamburger {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-links li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-links li:last-child {
+    border-bottom: none;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: #007aff;
+    font-size: 16px;
+}
+
+.menu-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    display: inline-block;
+}
+
+/* Table Styles */
+.stock-table-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Scroll inside the table container */
+    margin-top: 20px;
+}
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stock-table th,
+.stock-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.stock-table thead {
+    background-color: #007aff;
+    color: white;
+}
+
+.stock-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.stock-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.stock-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: default;
+}
